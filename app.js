@@ -84,12 +84,12 @@ class App extends React.Component {
         <div className="scoreboard">
           <Header 
             title="Scoreboard" 
-            totalPlayers={props.initialPlayers.length}  
+            totalPlayers={this.state.players.length}  
 
             />
       
       {/* players list */}
-        {props.initialPlayers.map( player =>
+        {this.state.players.map( player =>
           <Player
             name={player.name}
             key={player.id.toString()}
