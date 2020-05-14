@@ -74,7 +74,16 @@ class App extends React.Component {
         {
           name: "James",
           id: 4
+        },
+        {
+          name: "Lisa",
+          id: 5
+        },
+        {
+          name: "Eric",
+          id: 6
         }
+    
       ]
     };
         
