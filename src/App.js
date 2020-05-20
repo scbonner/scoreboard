@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+const  Header = () => {
+    return (
+      <header>
+          <h1>Scoreboard</h1>
+          <span className="stats">Players: 1</span>
+     </header>
+    );
+
+}
+
+const Player = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="player">
+      <span className="player-name">
+        Guil
+      </span>
+
+        <div className="counter">
+            <button className="counter-action decrement"> - </button>
+            <button className="counter-action increment"> + </button>
+        </div>
     </div>
   );
 }
 
-export default App;
+
+ReactDOM.render(
+  <Header />,
+  document.getElementById('root')
+
+);
+
+
+
