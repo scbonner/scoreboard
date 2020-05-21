@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Player from './Player';
+import AddPlayerForm from './AddPlayerForm';
 
 
 
@@ -29,7 +30,7 @@ class App extends Component {
         id: 4
       }
     
-    ]
+    ]}
   };
 
   handleScoreChange = (index, delta) => {
@@ -48,6 +49,7 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div className="scoreboard">
         <Header 
@@ -68,12 +70,14 @@ class App extends Component {
   
          />
         )}
+      
+
+        <AddPlayerForm />
       </div>
   
     );
-  }
-  
-}
+  )};
+
 
 export default App;
 
