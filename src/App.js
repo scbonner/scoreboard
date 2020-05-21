@@ -5,19 +5,23 @@
 const players = [
   {
     name: "Guil",
-    score: 50
+    score: 50,
+    id: 1
   },
   {
     name: "Treasure",
-    score: 85
+    score: 85,
+    id: 2
   },
   {
     name: "Ashley",
-    score: 95
+    score: 95,
+    id: 3
   },
   {
     name: "James",
-    score: 80
+    score: 80,
+    id: 4
   }
 
 ];
@@ -40,20 +44,31 @@ const Player = (props) => {
             {props.name}
           </span>
 
-          <Counter score={props.score}/>
+          <Counter />
         </div>
     );
   }
           
-const Counter = () => {
-  return (
-    <div className="counter">
-      <button className="counter-action decrement"> - </button>
-      <span className="counter-score">{ props.score }</span>
-      <button className="counter-action increment"> + </button>
-    </div>
-  );
- }
+class Counter extends React.Component {
+  state = {
+    score: 0
+  };
+
+incrementScore() {
+  console.log('Hi,from inside the incrementScore!');
+}
+
+  render() {
+    return (
+      <div className="counter">
+        <button className="counter-action decrement"> - </button>
+        <span className="counter-score">{ this.state.score }</span>
+        <button className="counter-action increment" onClick={this.incrementScore}> + </button>
+      </div>
+    );
+   }    
+}
+  
 
 const App = () => {
   retun (
@@ -67,7 +82,7 @@ const App = () => {
       {props.initialPlayers.map( player =>
         <Player
           name={player.name}
-          score={player.score}
+          key={player.id.toSting}
 
        />
       )}
