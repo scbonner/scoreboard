@@ -33,10 +33,10 @@ class App extends Component {
   };
 
   handleScoreChange = (index, delta) => {
-  // this.setState( prevState => ({
-  //   score: prevState.score + 1
-  //   }));
-  console.log('index: ' + 'delta: ' + delta);
+  this.setState( prevState => ({
+    score: prevState.players[index].score += delta
+    }));
+  
 }
   
   handleRemovePlayer = (id) => {
