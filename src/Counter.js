@@ -4,14 +4,14 @@
 
 
 
- const Counter = ({ index, score }) => {
+ const Counter = ({ index }) => {
     return (
         <Consumer>
-            { context => {
+            { ({ actions, players }) => {
                 <div className="counter">
-                    <button className="counter-action decrement" onClick={() => context.actions.changeScore(index, -1)}> - </button>
-                    <span className="counter-score">{ score }</span>
-                    <button className="counter-action increment" onClick={() => context.actions.changeScore(index, 1)}> + </button>
+                    <button className="counter-action decrement" onClick={() => actions.changeScore(index, -1)}> - </button>
+                    <span className="counter-score">{ players[index].score }</span>
+                    <button className="counter-action increment" onClick={() => actions.changeScore(index, 1)}> + </button>
                 </div>
             }}
         </Consumer>
@@ -21,7 +21,6 @@
 
 Counter.propTypes = {
     index: PropTypes.number,
-    score: PropTypes.number
 };
 
 
